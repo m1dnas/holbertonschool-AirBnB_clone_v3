@@ -14,7 +14,7 @@ from models.review import Review
 @app_views.route('/status')
 def status():
     return {"status": "OK"}
-    
+
 
 @app_views.route('/stats')
 def stats():
