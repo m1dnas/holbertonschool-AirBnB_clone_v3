@@ -76,7 +76,7 @@ class FileStorage:
             for key, value in classes.items():
                 if cls == value:
                     className = key
-                    break 
+                    break
             key = "{}.{}".format(className, id)
 
             if key in self.__objects.keys():
