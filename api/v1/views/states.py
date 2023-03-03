@@ -5,6 +5,7 @@ from models import storage
 from models.state import State
 from api.v1.views import app_views
 
+
 @app_views.route('/states', methods=["GET", "POST"])
 def get_states():
     """Retrieves the list of all State objects"""
