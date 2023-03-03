@@ -15,18 +15,18 @@ def get_states():
             all_states.append(obj.to_dict())
 
         return jsonify(all_states)
-    
+
     elif request.method == 'POST':
         http_data = request.get_json()
         if not http_data:
-            abort(400, 'Not a JSON')
+            return jsonify({"error": "Not a JSON"}), 400
         if "name" not in http_data:
-            abort(400, 'Missing name')
+            return jsonify({"error": "Missing name"}), 400
 
         new_state = State(**http_data)
         new_state.save()
         return jsonify(new_state.to_dict()), 201
-    
+
 @app_views.route('/states/<string:state_id>', methods=["GET", "DELETE", "PUT"])
 def stateid(state_id):
     """Retrieves, deletes or updates a State object by state_id"""
