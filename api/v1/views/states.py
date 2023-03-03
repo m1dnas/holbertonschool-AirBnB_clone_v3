@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""endpoint of state"""
 from flask import jsonify, request, abort
 from models import storage
 from models.state import State
